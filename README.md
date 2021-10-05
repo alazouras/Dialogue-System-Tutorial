@@ -29,3 +29,5 @@ Then, add some graphics to the text box so that it can be seen in the Canvas, an
 ![image](https://user-images.githubusercontent.com/91538155/136017368-8bae038b-396f-4c4b-b250-142d7feb06db.png)
 ![image](https://user-images.githubusercontent.com/91538155/136019360-e5265072-8588-4638-bbef-0bb3db8596dc.png)
 
+
+# 2) Adding Your Text

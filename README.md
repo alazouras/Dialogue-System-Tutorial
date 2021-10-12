@@ -88,3 +88,111 @@ Once you go back into Unity and press play, you should have something like this:
 
 ![image](https://user-images.githubusercontent.com/91538155/136949639-e02df291-0d7b-42f4-b9b2-2b36e8fef3dc.png)
 
+# 4) Adding a Typing Effect
+Start by creating a new script called TypewriterEffect
+
+![image](https://user-images.githubusercontent.com/91538155/136950195-5aeae258-d93f-4366-8396-87218dc29958.png)
+
+Open up the script and delete the default Unity methods:
+
+![image](https://user-images.githubusercontent.com/91538155/136950321-1c52efdc-180c-4ad1-b7ec-6608e437271f.png)
+
+This public class will contain two methods:
+
+a Driver method, responsible for running the Coroutine:
+
+![image](https://user-images.githubusercontent.com/91538155/136950638-4279a88d-e42d-4c5c-9d6d-0d366e4d2dce.png)
+
+And the Coroutine, responsible for drawing the text on screen:
+
+![image](https://user-images.githubusercontent.com/91538155/136950858-c40812da-ea3e-4f12-8327-99360ad5389f.png)
+
+First, add the Coroutine into the Driver methid like so:
+
+![image](https://user-images.githubusercontent.com/91538155/136951297-12b8ddc0-952e-4d89-827d-af4304a36594.png)
+
+Then, import Text Mesh Pro like in the previous script:
+
+![image](https://user-images.githubusercontent.com/91538155/136951498-5c79512b-5175-4129-9481-58a465496f0c.png)
+
+Next, fill in the Driver method as follows, with textToType being the string we want to type and textLabel being what we want to type that on:
+
+![image](https://user-images.githubusercontent.com/91538155/136951762-8f0382e6-9d78-4ad2-8912-d4ffe48dc65a.png)
+
+Cope the same parameters for the Coroutine so that you have this:
+
+![image](https://user-images.githubusercontent.com/91538155/136951843-462ceaff-a018-4674-9953-0fce5c89a391.png)
+
+Then fill in the textToType and textLabel here:
+
+![image](https://user-images.githubusercontent.com/91538155/136951967-f05467dd-6019-441a-a0b6-af612d6eb86a.png)
+
+Then, in the Coroutine, ad a float t which is, for now, equal to 0:
+
+![image](https://user-images.githubusercontent.com/91538155/136952085-f7fd7e09-8a46-46bf-bff0-0af59846b3c0.png)
+
+The, add a Character Index, which will also equal 0:
+
+![image](https://user-images.githubusercontent.com/91538155/136952275-cb12c3d6-72f6-4b1d-91bb-9c376f522810.png)
+
+The Character Index will measure how many characters we want to appear on screen at a given time, and so to measure that we type out as follows, beneath the other two lines in the Coroutine:
+
+![image](https://user-images.githubusercontent.com/91538155/136952563-b2343573-1c92-4a5a-a592-fdc4c9e2b1f0.png)
+
+And in there write out:
+
+![image](https://user-images.githubusercontent.com/91538155/136952665-dadaa1d6-9324-4693-81f3-b11fe836d586.png)
+
+Then above that write out the following so that it comes after one second:
+
+![image](https://user-images.githubusercontent.com/91538155/136952808-02e6cfa0-57bf-4dab-9e68-9c19a7243373.png)
+
+Below that, write out the following:
+
+![image](https://user-images.githubusercontent.com/91538155/136953025-78c83b21-c554-48a9-b3e3-b92562428200.png)
+
+The first line here will increment the time, and the line below that we just did will store the floored value of the line above.
+
+We have to make sure that FloorToInt is never higher than textToType, and so to do that we add this third line here to limit the range of the charIndex:
+
+![image](https://user-images.githubusercontent.com/91538155/136953484-52081760-8319-4404-8016-5a75d65f1392.png)
+
+Now, we have to write the text. For that we write in this line here:
+
+![image](https://user-images.githubusercontent.com/91538155/136953680-b6ff9fc2-0193-4d7d-af59-76617cbd3e13.png)
+
+And then, outside of the while void, make sure that the textLabel.text is equal to textToType in the first place:
+
+![image](https://user-images.githubusercontent.com/91538155/136953838-162260a8-98dc-4e6c-aca5-589716e93c40.png)
+
+
+# 5) Testing if the code works
+Now, to test, pop into the DialogueUI script, and get rid of the part of the script here:
+
+![image](https://user-images.githubusercontent.com/91538155/136954292-874d46b7-e9ac-4692-8c20-823c78c93e24.png)
+
+And bring in the TypewriterEffect script by using GetComponent and write out the following, including something for the code to type out:
+
+![image](https://user-images.githubusercontent.com/91538155/136954685-adb5ba2d-624f-4e1e-a673-4d7e08d7dd57.png)
+
+Go into Unity and add your TypewriterEffect script to the Canvas:
+
+![image](https://user-images.githubusercontent.com/91538155/136954880-38171f2e-2aec-43d5-b94e-9c32567068cc.png)
+
+And hopefully that should work, though rather slowly. To control the speed, we now have to go back into the TypewriterEffect script and add a new variable called typewriterSpeed and make it a serialised field:
+
+![image](https://user-images.githubusercontent.com/91538155/136955415-be746055-ad9b-4be0-bc15-093492b4c288.png)
+
+Scroll down to the reference to deltaTime and add the following to that line
+
+![image](https://user-images.githubusercontent.com/91538155/136955687-e9e440bb-b421-4eee-987b-c77e72148419.png)
+
+Now, save that and go back to Unity, where under the TypewriterEffect script we can now adjust the speed of the text typing in the Unity editor, and the text should type much faster now.
+
+To give us a much clearer picture of the speed, in the TypewriterEffect script under the IEnumerator and add this, which will make the text wait for 2 seconds before starting to type:
+
+![image](https://user-images.githubusercontent.com/91538155/136956063-d69dd767-cdae-4f20-ae6e-14372dfa1599.png)
+
+And finally, to make sure New Text doesn't show up in the final thing before the script starts typing, add in this line:
+
+![image](https://user-images.githubusercontent.com/91538155/136956521-953367d0-4bbc-4c55-94f5-384ad95e8605.png)

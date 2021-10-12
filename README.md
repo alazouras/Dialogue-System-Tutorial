@@ -196,3 +196,8 @@ To give us a much clearer picture of the speed, in the TypewriterEffect script u
 And finally, to make sure New Text doesn't show up in the final thing before the script starts typing, add in this line:
 
 ![image](https://user-images.githubusercontent.com/91538155/136956521-953367d0-4bbc-4c55-94f5-384ad95e8605.png)
+
+# 6) Making text appear when you click
+George is a dickhead and didn't screenshot as he went, so just do this:
+
+![image](https://user-images.githubusercontent.com/91538155/136959477-133766ed-1350-47e9-a9f1-fb6d6eace68f.png)

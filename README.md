@@ -198,6 +198,22 @@ And finally, to make sure New Text doesn't show up in the final thing before the
 ![image](https://user-images.githubusercontent.com/91538155/136956521-953367d0-4bbc-4c55-94f5-384ad95e8605.png)
 
 # 6) Making text appear when you click
-George is a dickhead and didn't screenshot as he went, so just do this:
+To have multiple, clickable lines of dialogue, store each line of dialogue in a public array that can be changed in the inspector in Unity and make an integer variable to sort through each item in the array.
 
-![image](https://user-images.githubusercontent.com/91538155/136959477-133766ed-1350-47e9-a9f1-fb6d6eace68f.png)
+![image](https://user-images.githubusercontent.com/91538155/136961109-22669c9b-8aa2-4a56-a1d3-6a2adff06810.png)
+
+Change out the "text" for the following to paste the first line of text in the array:
+
+![image](https://user-images.githubusercontent.com/91538155/136961319-d82b80e4-941b-4c3d-80f6-676973d4b71c.png)
+
+Then, put this into an if statement to trigger on Space:
+
+![image](https://user-images.githubusercontent.com/91538155/136961697-0283a9fe-96fb-4c37-a2b8-4a7031b38472.png)
+
+Then, add Index++ to allow for moving onto the next line in the array:
+
+![image](https://user-images.githubusercontent.com/91538155/136961796-9d6f6b89-18b1-404f-bdf8-e32797ac9dc4.png)
+
+Finally, add a check to prevent an error when running out of dialogue:
+
+![image](https://user-images.githubusercontent.com/91538155/136962242-93debf9d-62d7-4194-893d-f51aab204a79.png)

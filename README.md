@@ -51,3 +51,40 @@ Finally, have a slight offset for the text just so that it's not directly agains
 
 
 # 3) The Actual Code
+First, create a C# script in the scripts folder and name it DialogueUI, and open it up. This script will be the main component in having text appear in the text box at all:
+
+![image](https://user-images.githubusercontent.com/91538155/136946094-bbd7c9d4-81fc-4a88-9047-e31c7d7d1fa2.png)
+
+Then, add the script to the Canvas:
+
+![image](https://user-images.githubusercontent.com/91538155/136946360-a287be08-a89e-4a38-a0fd-ce300f635640.png)
+
+Next, open up the script and delete everything that has been highlighted so that you're left with a mostly blank script:
+
+![image](https://user-images.githubusercontent.com/91538155/136946743-007ddcb7-6f78-4b4d-9cae-7b95cb16eeb1.png)
+![image](https://user-images.githubusercontent.com/91538155/136946835-3255e97b-6055-475f-b812-0c48864de74a.png)
+
+Add TMPro to the using list:
+
+![image](https://user-images.githubusercontent.com/91538155/136946945-672e7956-5c46-47b5-8709-832ddef45b49.png)
+
+Then, reference the Text Mesh Pro with the following code underneath public class:
+
+![image](https://user-images.githubusercontent.com/91538155/136947279-6a0643ec-4b05-438b-b654-56bbddc850ac.png)
+
+You should now have an empty TMPro section in the script under Canvas components:
+
+![image](https://user-images.githubusercontent.com/91538155/136947460-f85c3b34-8ed4-4136-8d3b-38ab7949b28f.png)
+
+Drag your Text from the Dialogue Box drop down into the empty section:
+
+![image](https://user-images.githubusercontent.com/91538155/136947620-c1aef376-e5f6-4e31-a3e4-461054920119.png)
+
+Next, go back to the script so that we can write a method that draws some text to make sure that it works. To do that, write out a Start void, and in it write out the code as follows. After writing out your text, test out whether having a second line works by adding a \n for new line, and write out your second line:
+
+![image](https://user-images.githubusercontent.com/91538155/136949511-ae0b607c-40f3-4bdf-ab84-cd8c6de7f51d.png)
+
+Once you go back into Unity and press play, you should have something like this:
+
+![image](https://user-images.githubusercontent.com/91538155/136949639-e02df291-0d7b-42f4-b9b2-2b36e8fef3dc.png)
+
